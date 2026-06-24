@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    background: black;
+    overflow-x: hidden;
+    transition: 0.6s ease;
+}
+
+/* 🌌 Background cinematic */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: radial-gradient(circle at top, rgba(255,77,166,0.25), transparent 60%),
+                radial-gradient(circle at bottom, rgba(77,121,255,0.25), transparent 60%),
+                linear-gradient(135deg, #050510, #0b0f2f, #1c1b3a);
+    animation: glow 10s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.25); }
+}
+
+/* 🎬 Intro */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Nav */
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 18px;
+    margin: 15px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+/* Hearts */
+.hearts::before {
+    content: "💖 💕 💖 💕 💖 💕";
+    position: fixed;
+    top: 100%;
+    width: 100%;
+    opacity: 0.25;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    to { transform: translateY(-120vh); }
+}
+
+/* Titles */
+h1 {
+    color: #ff4da6;
+}
